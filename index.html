@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学习vue原理</title>
+</head>
+<body>
+    <div id="app">
+        <p>hello<span id="spanText"></span></p>
+    </div>
+<script src="./cvue.js"></script>
+<script>
+    const cvue = new CVue({
+        data: {
+            test: '122',
+            foo: {
+                bar: '345'
+            }
+        }
+    });
+
+    cvue.$data.test = '1+1';
+    cvue.$data.foo.bar = '2+2';
+    console.log(cvue)
+    console.log(cvue.$data.test)
+    console.log(cvue.$data.foo.bar)
+
+
+    // var obj = {};
+    // Object.defineProperty(obj, 'text', {
+    //     get: function() {
+    //         return document.getElementById('spanText').innerHTML;
+    //     },
+    //     set: function(inner) {
+    //         document.getElementById('spanText').innerHTML = inner;
+    //     }
+    // });
+    // obj.text = 'world';
+    // console.log(obj)
+
+</script>
+</body>
+</html>
